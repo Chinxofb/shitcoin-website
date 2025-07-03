@@ -26,6 +26,35 @@
             animation: float 3s ease-in-out infinite;
         }
 
+        .buy-now-btn {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #000;
+            padding: 15px 25px;
+            border-radius: 20px;
+            border: 4px solid #FF0000;
+            font-size: 20px;
+            font-weight: 900;
+            cursor: pointer;
+            text-shadow: 2px 2px 0px #FFFF00;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            margin: 0 auto 20px;
+        }
+
+        .buy-now-btn:hover {
+            transform: scale(1.15);
+            box-shadow: 0 0 50px rgba(255, 215, 0, 1);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
         .coin {
             width: 300px;
             height: 300px;
@@ -244,22 +273,6 @@
         .sparkle:nth-child(3) { bottom: 30%; left: 10%; animation-delay: 1s; }
         .sparkle:nth-child(4) { bottom: 20%; right: 20%; animation-delay: 1.5s; }
         .sparkle:nth-child(5) { top: 60%; left: 50%; animation-delay: 0.8s; }
-
-        .balance-display {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            color: #FFD700;
-            padding: 10px 15px;
-            border-radius: 10px;
-            border: 2px solid #FFD700;
-            font-size: 16px;
-            font-weight: 900;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-            z-index: 100;
-        }
 
         .account-btn {
             position: absolute;
@@ -525,7 +538,7 @@
                 <img id="profilePic" class="profile-pic" style="display: none;">
                 <div id="profilePicPlaceholder" class="profile-pic-placeholder">🌙</div>
             </div>
-            <input type="file" id="profilePicInput" class="file-input" accept="image/*">
+            <input type="file" id="profilePicInput" class="file-input" accept="image/png">
             
             <input type="text" id="usernameInput" class="profile-input" placeholder="Enter your degen username...">
             
@@ -554,6 +567,10 @@
     </div>
     
     <div class="logo-container">
+        <a href="https://pump.fun/coin/3rzp1y6QpDaj3QUtjuDBD6imGKXn9Tq1X9xc8Pf9pump" target="_blank" class="buy-now-btn">
+            BUY NOW! 🚀
+        </a>
+        
         <div class="coin" onclick="addCoin(event)">
             <div class="doge-text text1">MUCH</div>
             <div class="doge-text text2">WOW</div>
