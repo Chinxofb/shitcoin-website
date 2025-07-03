@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$MOONBOI - To The Moon! 🚀</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Arial Black', Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .logo-container {
+            text-align: center;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .coin {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #FF69B4, #00FF00, #FFD700, #FF1493);
+            border: 8px solid #FFFF00;
+            box-shadow: 0 0 30px rgba(255, 20, 147, 0.8), 0 0 60px rgba(0, 255, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin: 0 auto 20px;
+            animation: spin 2s linear infinite, rainbow 3s ease-in-out infinite;
+            overflow: hidden;
+        }
+
+        .pepe-face {
+            width: 140px;
+            height: 120px;
+            background: linear-gradient(135deg, #90EE90, #32CD32);
+            border-radius: 60px 60px 40px 40px;
+            position: relative;
+            margin-bottom: 10px;
+            border: 3px solid #006400;
+        }
+
+        .eyes {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .eye {
+            width: 25px;
+            height: 35px;
+            background: #fff;
+            border-radius: 50%;
+            border: 2px solid #000;
+            position: relative;
+            animation: derp 2s infinite;
+        }
+
+        .pupil {
+            width: 12px;
+            height: 15px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+            top: 5px;
+            left: 6px;
+            animation: eyeRoll 4s infinite;
+        }
+
+        .mouth {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 8px;
+            background: #000;
+            border-radius: 0 0 40px 40px;
+            animation: smug 3s infinite;
+        }
+
+        .coin-name {
+            font-size: 24px;
+            font-weight: 900;
+            color: #000;
+            text-shadow: 2px 2px 0px #FFFF00, 4px 4px 0px #FF1493;
+            letter-spacing: 2px;
+            animation: textGlow 2s infinite;
+        }
+
+        .doge-text {
+            position: absolute;
+            font-size: 12px;
+            font-weight: 900;
+            color: #FF1493;
+            text-shadow: 1px 1px 0px #FFFF00;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        .text1 { top: 10px; left: 10px; }
+        .text2 { top: 20px; right: 10px; animation-delay: 0.5s; }
+        .text3 { bottom: 60px; left: 20px; animation-delay: 1s; }
+        .text4 { bottom: 40px; right: 20px; animation-delay: 1.5s; }
+
+        .laser-eyes {
+            position: absolute;
+            width: 8px;
+            height: 20px;
+            background: linear-gradient(0deg, #FF0000, #FFFF00);
+            top: 30px;
+            animation: laser 1s infinite;
+            border-radius: 2px;
+        }
+
+        .laser-left { left: 43px; }
+        .laser-right { right: 43px; }
+
+        @keyframes rainbow {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        @keyframes derp {
+            0%, 80%, 100% { transform: scaleY(1); }
+            90% { transform: scaleY(0.1); }
+        }
+
+        @keyframes eyeRoll {
+            0%, 50%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        @keyframes smug {
+            0%, 100% { transform: translateX(-50%) scaleX(1); }
+            50% { transform: translateX(-50%) scaleX(1.3); }
+        }
+
+        @keyframes textGlow {
+            0%, 100% { text-shadow: 2px 2px 0px #FFFF00, 4px 4px 0px #FF1493; }
+            50% { text-shadow: 2px 2px 0px #00FF00, 4px 4px 0px #FF69B4, 0 0 20px #FFFF00; }
+        }
+
+        @keyframes laser {
+            0%, 100% { opacity: 0; height: 20px; }
+            50% { opacity: 1; height: 40px; }
+        }
+
+        @keyframes blink {
+            0%, 90%, 100% { transform: scaleY(1); }
+            95% { transform: scaleY(0.1); }
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(0.8) rotate(0deg); }
+            50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
+        }
+
+        .title {
+            font-size: 36px;
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 18px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+        }
+
+        .emojis {
+            font-size: 32px;
+            margin: 10px 0;
+            animation: bounce 2s infinite;
+        }
+
+        .warning {
+            background: rgba(255, 0, 0, 0.2);
+            border: 2px solid #ff0000;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            color: #fff;
+            font-size: 14px;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .sparkles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .sparkle {
+            position: absolute;
+            color: #FFD700;
+            font-size: 20px;
+            animation: sparkle 2s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        .sparkle:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
+        .sparkle:nth-child(2) { top: 20%; right: 15%; animation-delay: 0.5s; }
+        .sparkle:nth-child(3) { bottom: 30%; left: 10%; animation-delay: 1s; }
+        .sparkle:nth-child(4) { bottom: 20%; right: 20%; animation-delay: 1.5s; }
+        .sparkle:nth-child(5) { top: 60%; left: 50%; animation-delay: 0.8s; }
+
+        .balance-display {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #FFD700;
+            padding: 10px 15px;
+            border-radius: 10px;
+            border: 2px solid #FFD700;
+            font-size: 16px;
+            font-weight: 900;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+            z-index: 100;
+        }
+
+        .account-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #FF69B4, #00FF00);
+            color: #000;
+            padding: 10px 15px;
+            border-radius: 10px;
+            border: 2px solid #FFFF00;
+            font-size: 16px;
+            font-weight: 900;
+            cursor: pointer;
+            text-shadow: 1px 1px 0px #FFFF00;
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+            z-index: 101;
+            transition: all 0.3s ease;
+        }
+
+        .account-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(255, 105, 180, 0.8);
+        }
+
+        .balance-display {
+            position: absolute;
+            top: 80px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #FFD700;
+            padding: 10px 15px;
+            border-radius: 10px;
+            border: 2px solid #FFD700;
+            font-size: 16px;
+            font-weight: 900;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+            z-index: 100;
+        }
+
+        .profile-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .profile-content {
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            border: 3px solid #FFD700;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            color: #fff;
+            text-align: center;
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.5);
+        }
+
+        .profile-header {
+            font-size: 32px;
+            font-weight: 900;
+            color: #FFD700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .profile-pic-container {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #FF69B4, #00FF00, #FFD700);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid #FFFF00;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .profile-pic {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .profile-pic-placeholder {
+            font-size: 48px;
+            color: #000;
+            font-weight: 900;
+        }
+
+        .profile-input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #FFD700;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .profile-input::placeholder {
+            color: #ccc;
+        }
+
+        .profile-textarea {
+            width: 100%;
+            height: 80px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #FFD700;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            resize: none;
+        }
+
+        .profile-textarea::placeholder {
+            color: #ccc;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .stat-item {
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid #FFD700;
+            border-radius: 10px;
+            padding: 15px;
+            flex: 1;
+            margin: 0 5px;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 900;
+            color: #FFD700;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #ccc;
+            margin-top: 5px;
+        }
+
+        .profile-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .profile-btn {
+            background: linear-gradient(45deg, #FF69B4, #00FF00);
+            color: #000;
+            padding: 10px 20px;
+            border: 2px solid #FFFF00;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 900;
+            cursor: pointer;
+            text-shadow: 1px 1px 0px #FFFF00;
+            transition: all 0.3s ease;
+        }
+
+        .profile-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.8);
+        }
+
+        .close-btn {
+            background: linear-gradient(45deg, #FF1493, #DC143C);
+            color: #fff;
+            border: 2px solid #FF0000;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .coin:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.8);
+        }
+
+        .coin:active {
+            transform: scale(0.95);
+        }
+
+        .coin, .coin * {
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            pointer-events: none;
+        }
+
+        .coin {
+            pointer-events: auto;
+        }
+
+        .click-effect {
+            position: absolute;
+            color: #00ff00;
+            font-size: 24px;
+            font-weight: 900;
+            pointer-events: none;
+            animation: clickFloat 1s ease-out forwards;
+        }
+
+        @keyframes clickFloat {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-50px) scale(1.5);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sparkles">
+        <div class="sparkle">✨</div>
+        <div class="sparkle">⭐</div>
+        <div class="sparkle">✨</div>
+        <div class="sparkle">🌟</div>
+        <div class="sparkle">✨</div>
+    </div>
+    
+    <div class="account-btn" onclick="showProfile()">
+        👤 Account
+    </div>
+    <div class="balance-display">
+        Balance: <span id="balance">0</span> $MOONBOI
+    </div>
+    
+    <div class="profile-modal" id="profileModal">
+        <div class="profile-content">
+            <div class="profile-header">🚀 MOONBOI PROFILE 🚀</div>
+            
+            <div class="profile-pic-container" onclick="document.getElementById('profilePicInput').click()">
+                <img id="profilePic" class="profile-pic" style="display: none;">
+                <div id="profilePicPlaceholder" class="profile-pic-placeholder">🌙</div>
+            </div>
+            <input type="file" id="profilePicInput" class="file-input" accept="image/*">
+            
+            <input type="text" id="usernameInput" class="profile-input" placeholder="Enter your degen username...">
+            
+            <textarea id="bioInput" class="profile-textarea" placeholder="Tell us about your moon mission... 🚀"></textarea>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-value" id="totalCoins">0</div>
+                    <div class="stat-label">Total $MOONBOI</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="totalClicks">0</div>
+                    <div class="stat-label">Total Clicks</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="playTime">0m</div>
+                    <div class="stat-label">Play Time</div>
+                </div>
+            </div>
+            
+            <div class="profile-buttons">
+                <button class="profile-btn" onclick="saveProfile()">💾 Save Profile</button>
+                <button class="profile-btn close-btn" onclick="hideProfile()">❌ Close</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="logo-container">
+        <div class="coin" onclick="addCoin(event)">
+            <div class="doge-text text1">MUCH</div>
+            <div class="doge-text text2">WOW</div>
+            <div class="doge-text text3">MOON</div>
+            <div class="doge-text text4">HODL</div>
+            
+            <div class="pepe-face">
+                <div class="eyes">
+                    <div class="eye">
+                        <div class="pupil"></div>
+                    </div>
+                    <div class="eye">
+                        <div class="pupil"></div>
+                    </div>
+                </div>
+                <div class="laser-eyes laser-left"></div>
+                <div class="laser-eyes laser-right"></div>
+                <div class="mouth"></div>
+            </div>
+            <div class="coin-name">MOONBOI</div>
+        </div>
+        
+        <div class="title">$MOONBOI</div>
+        <div class="tagline">TO THE MOON OR BUST! 🚀</div>
+        <div class="emojis">🚀💎🙌💰🌕</div>
+        
+        <div class="warning">
+            <strong>⚠️ DEGEN WARNING ⚠️</strong><br>
+            This is a meme coin for entertainment purposes only!<br>
+            Not financial advice. DYOR. Could go to zero!<br>
+            <em>But imagine if it doesn't... 👀</em>
+        </div>
+    </div>
+
+    <script>
+        let balance = 0;
+        let totalClicks = 0;
+        let startTime = Date.now();
+        let profileData = {
+            username: '',
+            bio: '',
+            profilePic: null
+        };
+        
+        const balanceDisplay = document.getElementById('balance');
+
+        function addCoin(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            
+            balance += 1;
+            totalClicks += 1;
+            balanceDisplay.textContent = balance;
+            
+            // Create floating +1 effect
+            const clickEffect = document.createElement('div');
+            clickEffect.className = 'click-effect';
+            clickEffect.textContent = '+1 $MOONBOI';
+            clickEffect.style.position = 'absolute';
+            clickEffect.style.left = (event.clientX - 50) + 'px';
+            clickEffect.style.top = (event.clientY - 20) + 'px';
+            
+            document.body.appendChild(clickEffect);
+            
+            // Remove effect after animation
+            setTimeout(() => {
+                if (document.body.contains(clickEffect)) {
+                    document.body.removeChild(clickEffect);
+                }
+            }, 1000);
+            
+            // Add some extra sparkle on click
+            if (balance % 10 === 0) {
+                showSpecialEffect();
+            }
+        }
+
+        function showSpecialEffect() {
+            const coin = document.querySelector('.coin');
+            const currentAnimation = coin.style.animation;
+            coin.style.animation = 'spin 0.5s linear 3';
+            
+            setTimeout(() => {
+                coin.style.animation = 'spin 2s linear infinite, rainbow 3s ease-in-out infinite';
+            }, 1500);
+        }
+
+        function showProfile() {
+            document.getElementById('profileModal').style.display = 'flex';
+            updateStats();
+            loadProfile();
+        }
+
+        function hideProfile() {
+            document.getElementById('profileModal').style.display = 'none';
+        }
+
+        function updateStats() {
+            document.getElementById('totalCoins').textContent = balance;
+            document.getElementById('totalClicks').textContent = totalClicks;
+            
+            const playTimeMinutes = Math.floor((Date.now() - startTime) / 60000);
+            const playTimeSeconds = Math.floor((Date.now() - startTime) / 1000) % 60;
+            document.getElementById('playTime').textContent = `${playTimeMinutes}m ${playTimeSeconds}s`;
+        }
+
+        function saveProfile() {
+            profileData.username = document.getElementById('usernameInput').value;
+            profileData.bio = document.getElementById('bioInput').value;
+            
+            alert('🚀 Profile saved! You are now a certified MOONBOI! 🌙');
+        }
+
+        function loadProfile() {
+            document.getElementById('usernameInput').value = profileData.username;
+            document.getElementById('bioInput').value = profileData.bio;
+            
+            if (profileData.profilePic) {
+                document.getElementById('profilePic').src = profileData.profilePic;
+                document.getElementById('profilePic').style.display = 'block';
+                document.getElementById('profilePicPlaceholder').style.display = 'none';
+            }
+        }
+
+        // Handle profile picture upload
+        document.getElementById('profilePicInput').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    profileData.profilePic = e.target.result;
+                    document.getElementById('profilePic').src = e.target.result;
+                    document.getElementById('profilePic').style.display = 'block';
+                    document.getElementById('profilePicPlaceholder').style.display = 'none';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('profileModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                hideProfile();
+            }
+        });
+
+        // Update play time every second
+        setInterval(updateStats, 1000);
+    </script>
+</body>
+</html>
